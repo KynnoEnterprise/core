@@ -1,0 +1,16 @@
+# CODEOWNERS: https://help.github.com/articles/about-codeowners/
+
+# Primary (global) repo maintainers
+*       @kynnoenterprise/labs
+
+# Documentation
+docs/ @danburck
+
+# kynno Modules
+x/epochs/ @ahmedoubadi
+x/erc20/ @ahmedoubadi
+x/rewardshare/ @ahmedoubadi
+x/incentives/ @ahmedoubadi
+x/inflation/ @ahmedoubadi
+x/vesting/ @ahmedoubadi
+x/nft/ @ahmedoubadi

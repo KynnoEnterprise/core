@@ -1,0 +1,63 @@
+version: '3'
+
+services:
+  node0:
+    container_name: kynnonode0
+    image: "kynno/node"
+    ports:
+      - "26656-26657:26656-26657"
+    volumes:
+      - ./build/node0/kynnod:/kynno:Z
+    command:
+      - /kynnod start --home /kynno
+    networks:
+      localnet:
+        ipv4_address: 192.167.10.2
+
+  node1:
+    container_name: kynnonode1
+    image: "kynno/node"
+    ports:
+      - "26659-26660:26656-26657"
+    volumes:
+      - ./build/node1/kynnod:/kynno:Z
+    command:
+      - /kynnod start --home /kynno
+    networks:
+      localnet:
+        ipv4_address: 192.167.10.3
+
+  node2:
+    container_name: kynnonode2
+    image: "kynno/node"
+    ports:
+      - "26661-26662:26656-26657"
+    volumes:
+      - ./build/node2/kynnod:/kynno:Z
+    command:
+      - /kynnod start --home /kynno
+    networks:
+      localnet:
+        ipv4_address: 192.167.10.4
+
+  node3:
+    container_name: kynnonode3
+    image: "kynno/node"
+    ports:
+      - "26663-26664:26656-26657"
+    volumes:
+      - ./build/node3/kynnod:/kynno:Z
+    command:
+      - /kynnod start --home /kynno
+    networks:
+      localnet:
+        ipv4_address: 192.167.10.5
+
+networks:
+  localnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        -
+          subnet: 192.167.10.0/16
